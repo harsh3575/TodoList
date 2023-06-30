@@ -1,3 +1,4 @@
+import { TodosProvider } from '@/store/Todos'
 import './globals.css'
 
 export const metadata = {
@@ -12,7 +13,11 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body>
+        <TodosProvider>
+          {children}
+        </TodosProvider>
+      </body>
     </html>
   )
 }
